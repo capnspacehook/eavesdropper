@@ -12,4 +12,6 @@ FROM alpine
 
 COPY --from=builder /build/eavesdropper /usr/bin/eavesdropper
 
+RUN apk add --no-cache curl nmap
+
 ENTRYPOINT [ "/usr/bin/eavesdropper" ]
